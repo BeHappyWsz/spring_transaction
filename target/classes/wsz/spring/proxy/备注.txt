@@ -1,0 +1,10 @@
+proxy声明式事务加载bean时出现一下异常:读取bean出现循环
+Bean creation exception on FactoryBean type check: 
+	org.springframework.beans.factory.BeanCreationException: 
+		Error creating bean with name 'accountService' defined in class path resource [wsz/spring/proxy/resource/spring-proxy.xml]: 
+		  Cannot resolve reference to bean 'accountServiceTarget' while setting bean property 'target'; 
+			nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountServiceTarget': 
+		  Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: 
+		Could not autowire field: private wsz.spring.proxy.dao.AccountDao wsz.spring.proxy.service.AccountServiceImpl.accountDao; 
+	nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'accountDaoImpl': 
+Requested bean is currently in creation: Is there an unresolvable circular reference?
